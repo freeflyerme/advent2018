@@ -29,7 +29,7 @@ fun diffByOne(s: String, s1: String): Int {
         return -1
     }
     var diffPos = -1
-    for (i in char1.indices) {
+    for (i in char1.indices) { // Lesson: use Array.indices to easily for loop through them
         if (char1[i] != char2[i]) {
             if (diffPos == -1) {
                 diffPos = i
