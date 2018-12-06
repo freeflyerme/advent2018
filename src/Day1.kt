@@ -16,7 +16,7 @@ fun part2() {
     val visited = HashSet<Int>()
     var i = 0
     var freq = 0
-    find@ while (true) {
+   find@ while (true) {
         i %= input.size
         freq += input[i]
         if (visited.contains(freq)) {
