@@ -49,6 +49,10 @@ fun <T> breadthFirstVisit(toVisit: LinkedList<T>, included: HashSet<T>, adjList:
     }
 }
 
+fun manhattanDist(p1: Pair<Int, Int>, p2: Pair<Int, Int>): Int {
+   return Math.abs(p1.first - p2.first) + Math.abs(p1.first - p2.second)
+}
+
 // Day 10 reverse sublist
 fun <T> MutableList<T>.reverse(index1: Int, index2: Int, swaps: Int) { // Lesson: Extension class for ArrayList for custom reverse
     var numSwaps = swaps / 2
