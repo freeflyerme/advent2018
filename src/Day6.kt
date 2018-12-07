@@ -22,7 +22,7 @@ fun part6_2() {
 
     var grid = List(xLen) { MutableList(yLen) { INVALID_DIST } }  // each grid: distance, list of points that belong there
 
-    val stdPoints = points.map { it -> Pair(it.first - minX, it.second - minY) }
+    val stdPoints = points.map { it -> Pair(it.first - minX + buffer, it.second - minY + buffer) }
 
 
     for (x in 0 until xLen ) {
