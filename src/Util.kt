@@ -29,6 +29,17 @@ fun readFileIntoData(fileName: String, split: String, parsingFunction: (String) 
 
 }
 
+fun characterToNumber(upperCase : Boolean, startNum: Int): Map<String, Int> {
+    val baseNum = 10 // 'a' => 10
+    return 'a'.rangeTo('z').asSequence().map {char ->
+        if (!upperCase) {
+            char.toString() to Character.getNumericValue(char) - 10 + startNum
+        } else {
+            char.toString().toUpperCase() to Character.getNumericValue(char) - 10 + startNum
+        }
+    }.toMap() // Lesson: toMap turns a collection of pairs into a Map
+}
+
 /**
  * Pre-condition: toVisit is populated with the first item to visit
  * Each visited node has an action performed upon it.  Action is optional
