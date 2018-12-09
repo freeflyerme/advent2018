@@ -45,13 +45,13 @@ fun characterToNumber(upperCase : Boolean, startNum: Int): Map<String, Int> {
  * Each visited node has an action performed upon it.  Action is optional
  * Post-Condition: includes has all of the elements visited
  */
-fun <T> breadthFirstVisit(toVisit: LinkedList<T>, included: HashSet<T>, adjList: HashMap<T, ArrayList<T>>,
+fun <T> breadthFirstVisit(toVisit: Queue<T>, included: MutableSet<T>, adjList: Map<T, ArrayList<T>>,
                           action: (T) -> Unit = {T -> Unit}) {
     while (!toVisit.isEmpty()) {
         val visited = toVisit.poll()
         included.add(visited)
         action(visited)
-        val neighbors = adjList.get(visited)!!
+        val neighbors = adjList[visited]!!
         for (n in neighbors) {
             if (!included.contains(n)) {
                 toVisit.add(n)
