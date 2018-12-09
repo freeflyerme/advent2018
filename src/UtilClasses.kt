@@ -1,7 +1,8 @@
-interface GenericNode<T> {
-    val children : MutableList<GenericNode<T>>
+interface GenericNode<T, R> {  // Lesson: value in generic class and also a traversal built in
+    val children : MutableList<GenericNode<T, R>>
     val data : T
-    fun depthFirstTraversal(action: (GenericNode<T>) -> Unit ) {
+    var data2: R
+    fun depthFirstTraversal(action: (GenericNode<T, R>) -> Unit ) {
         children.forEach { child ->
             child.depthFirstTraversal(action)
         }
